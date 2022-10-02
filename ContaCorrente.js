@@ -1,5 +1,7 @@
 export class ContaCorrente{
     agencia;
+    cliente;
+
     saldo;
 
     sacar(valor){
@@ -17,5 +19,10 @@ export class ContaCorrente{
         }else{
             console.log('Valor inválido, tente novamente')
         }
+    }
+
+    transferir(valor, conta){
+        const valorSacado = this.sacar(valor);
+        conta.depositar(valorSacado);
     }
 }
